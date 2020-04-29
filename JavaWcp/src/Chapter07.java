@@ -9,19 +9,5 @@ public class Chapter07 {
 		}else {
 			System.out.println("どのラーメンも食べられません");
 		}
-
-		lunchMoney = 800;
-		switch (lunchMoney) {
-		case 3:
-			System.out.println("チャーシュー麺が食べられます");
-			break;
-
-		case 2:
-			System.out.println("ラーメンが食べられます");
-			break;
-
-		default:
-			System.out.println("どのラーメンも食べられません");
-		}
 	}
 }
