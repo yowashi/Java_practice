@@ -3,18 +3,28 @@ package pet;
 class Pet {
 	private String type;
 	private String name;
+	private final String message = "はじめまして";
 
+	Pet(String type, String name){
+		this.setType(type);
+		this.setName(name);
+	}
+
+	void greet() {
+		System.out.println(message);
+		System.out.println("僕は" + this.getType() + "の" + this.getName() + "です");
+	}
 	/*Setter & Getter*/
-	public String getType() {
+	String getType() {
 		return this.type;
 	}
-	public void setType(String type) {
+	void setType(String type) {
 		this.type = type;
 	}
-	public String getName() {
+	String getName() {
 		return this.name;
 	}
-	public void setName(String name) {
+	void setName(String name) {
 		this.name = name;
 	}
 
@@ -23,15 +33,7 @@ class Pet {
 /*petClientクラス(petクラスを呼び出して利用するクラス)*/
 public class PetClient{
 	public static void main(String[] args) {
-		Pet dog = new Pet();
-		Pet cat = new Pet();
-
-		dog.setType("犬");
-		dog.setName("ポチ");
-		System.out.println("ペットの種類は" + dog.getType() + "、名前は" + dog.getName() +"です");
-
-		cat.setType("猫");
-		cat.setName("たま");
-		System.out.println("ペットの種類は" + cat.getType() + "、名前は" + cat.getName() +"です");
+		Pet pet = new Pet("犬","ぽち");
+		pet.greet();
 	}
 }
