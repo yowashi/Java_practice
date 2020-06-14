@@ -3,12 +3,14 @@ package pet;
 import java.io.Console;
 
 //FriendlyPetのクラス
-class FriendlyPet extends Pet {
-	FriendlyPet(String type, String name){
-		super(type, name);
+class FriendlyPet {
+	private Pet pet;
+
+	FriendlyPet(String type,String name){
+		pet = new Pet(type, name);
 	}
 	void greet() {
-		super.greet();
+		pet.greet();
 		System.out.println("何か話しかけてみて");
 		talk();
 	}
@@ -18,11 +20,25 @@ class FriendlyPet extends Pet {
 		System.out.println(words + "っ言った?");
 		System.out.println("おもしろいこというね");
 	}
+
+	/*Setter & Getter*/
+	String getType() {
+		return pet.getType();
+	}
+	void setType(String type) {
+		pet.setType(type);
+	}
+	String getName() {
+		return pet.getName();
+	}
+	void setName(String name) {
+		pet.setName(name);
+	}
 }
 	class Pet{
-		protected String type;
-		protected String name;
-		protected static String message = "はじめまして";
+		private String type;
+		private String name;
+		private static String message = "はじめまして";
 
 		Pet(String type, String name){
 			this.setType(type);
@@ -50,7 +66,7 @@ class FriendlyPet extends Pet {
 /*petClientクラス(petクラスを呼び出して利用するクラス)*/
 public class PetClient{
 	public static void main(String[] args) {
-		FriendlyPet pet = new FriendlyPet("犬","ぽち");
-		pet.greet();
+		FriendlyPet dog = new FriendlyPet("犬","ぽち");
+		dog.greet();
 	}
 }
